@@ -1,18 +1,42 @@
-# Ldomaradzki Xcsift
+# Homebrew Tap for xcsift
 
-## How do I install these formulae?
+A Homebrew tap for [xcsift](https://github.com/ldomaradzki/xcsift) - a Swift command-line tool to parse and format xcodebuild output for coding agents.
 
-`brew install ldomaradzki/xcsift/<formula>`
+## Installation
 
-Or `brew tap ldomaradzki/xcsift` and then `brew install <formula>`.
+### Option 1: Direct install
+```bash
+brew install ldomaradzki/xcsift/xcsift
+```
 
-Or, in a `brew bundle` `Brewfile`:
+### Option 2: Tap then install
+```bash
+brew tap ldomaradzki/xcsift
+brew install xcsift
+```
 
+### Option 3: Brewfile
+Add to your `Brewfile`:
 ```ruby
 tap "ldomaradzki/xcsift"
-brew "<formula>"
+brew "xcsift"
 ```
+
+## Usage
+
+After installation, you can use xcsift to parse xcodebuild output:
+
+```bash
+xcodebuild build | xcsift
+xcodebuild test | xcsift
+swift build | xcsift
+```
+
+## About xcsift
+
+xcsift transforms verbose Xcode build output into concise, structured JSON format optimized for coding agents. Unlike `xcbeautify` and `xcpretty` which focus on human-readable output, xcsift prioritizes information density and machine readability.
 
 ## Documentation
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+- [xcsift GitHub Repository](https://github.com/ldomaradzki/xcsift)
+- [Homebrew Documentation](https://docs.brew.sh)
