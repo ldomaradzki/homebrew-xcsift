@@ -1,8 +1,8 @@
 class Xcsift < Formula
   desc "Swift tool to parse xcodebuild output for coding agents"
   homepage "https://github.com/ldomaradzki/xcsift"
-  url "https://github.com/ldomaradzki/xcsift/archive/v1.0.3.tar.gz"
-  sha256 "144708a3ddef33e56e0125e01205499ad4dbf6390c0eff2a3d5b4b6868d903e9"
+  url "https://github.com/ldomaradzki/xcsift/archive/v1.0.5.tar.gz"
+  sha256 "ff08e195fb01f036f0df3335bd4cea923a6db367c5a8afd1f6d7d1fab654b5c6"
   license "MIT"
   head "https://github.com/ldomaradzki/xcsift.git", branch: "master"
 
@@ -10,6 +10,8 @@ class Xcsift < Formula
   depends_on :macos
 
   def install
+    # Replace version placeholder with actual version from formula
+    inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version
     system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/xcsift"
   end
