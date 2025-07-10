@@ -11,7 +11,7 @@ class Xcsift < Formula
 
   def install
     # Replace version placeholder with actual version from formula
-    inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version
+    inreplace "Sources/main.swift", "VERSION_PLACEHOLDER", version.to_s
     system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/xcsift"
   end
