@@ -27,10 +27,12 @@ brew "xcsift"
 After installation, you can use xcsift to parse xcodebuild output:
 
 ```bash
-xcodebuild build | xcsift
-xcodebuild test | xcsift
-swift build | xcsift
+xcodebuild build 2>&1 | xcsift
+xcodebuild test 2>&1 | xcsift
+swift build 2>&1 | xcsift
 ```
+
+**Note**: Always use `2>&1` to redirect stderr to stdout for proper error capture.
 
 ## About xcsift
 
